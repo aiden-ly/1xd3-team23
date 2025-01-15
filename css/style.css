@@ -1,4 +1,5 @@
 html, body {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     height: 100%;
     margin: 0;
 }
@@ -10,7 +11,12 @@ html, body {
 }
 
 .navlink {
-    border: 3px solid black;
+    border: 1px solid black;
     text-align: center;
     width: 25%;
+    padding: 18px;
+}
+
+.intro {
+    text-align: center;
 }
