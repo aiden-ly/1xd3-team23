@@ -31,3 +31,12 @@ html, body {
     padding-top: 5%;
     text-align: center;
 }
+
+.content {
+    text-align: center;
+}
+
+.description {
+    padding-top: 20px;
+    padding-left: 40px;
+}
