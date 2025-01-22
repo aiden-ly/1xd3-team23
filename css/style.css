@@ -4,6 +4,8 @@ html, body {
     margin: 0;
     color: white;
     background-image: linear-gradient(black,rgb(31, 1, 31));
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 .navbar {
@@ -60,4 +62,18 @@ html, body {
 
 .showcase:hover {
     background-color: rgb(97, 22, 97);
+}
+
+.writeup p {
+    font-size: 18px;
+    margin: auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+    width: 70%;
+}
+
+.writeup img {
+    padding: 20px;
+    width: 55%;
 }
