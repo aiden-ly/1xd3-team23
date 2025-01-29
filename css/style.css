@@ -46,7 +46,6 @@ html, body {
 }
 
 .description {
-    display: flex;
     text-align: left;
     background-color: rgb(44, 9, 44);
     border-radius: 10px;
@@ -55,9 +54,6 @@ html, body {
     width: 90%;
 }
 
-.description div {
-    width: 50%;
-}
 
 .description img {
     float: right;
@@ -97,4 +93,23 @@ html, body {
 .writeup img {
     padding: 20px;
     width: 55%;
+}
+
+.projectlist {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.project {
+    background-color: rgb(44, 9, 44);
+    border-radius: 10px;
+    margin-top: 30px;
+    padding: 20px;
+    width: 90%;
+}
+
+.project ul {
+    text-align: left;
 }
