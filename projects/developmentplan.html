@@ -42,31 +42,56 @@
                 <hr>
                 <p><strong>Login Info/User Profile: </strong>A list of all login information to allow users 
                 to have their own individual tasks. Their username and password will be used to login, while the 
-                rest of the information inputted will be displayed at their profile. Fields: Username (TEXT, PRIMARY), 
+                rest of the information inputted will be displayed at their profile. Fields: UserID (INT, PRIMARY), Username (TEXT), 
                 Password (TEXT), Real Name (TEXT), School (TEXT), Major (TEXT), Semester (TEXT)</p><br>
     
 
                 <p><strong>To-do List Table: </strong>A simple to-do list to be used daily. It will
                 store each task that the user adds (this can be anything and doesn't have 
                 to be related to a specific course/assignment) with a checkbox, showing if 
-                it is completed or not. Fields: Name (TEXT, PRIMARY), Description (TEXT), Completed (BOOLEAN).</p><br>
+                it is completed or not. Fields: ID (INT, PRIMARY), Name (TEXT), Description (TEXT), Completed (BOOLEAN).</p><br>
 
                 <p><strong>Tasks/Assignments: </strong>A list of all of the tasks the user adds so that
                 they can easily see an overview of what they need to do and which assignments to 
                 tackle first. It will store each task which will each have their own due date and priority. 
-                Fields: Name (TEXT, PRIMARY), Description (TEXT), Course (TEXT), Due Date (DATE), 
+                Fields: ID (INT, PRIMARY), Name (TEXT), Description (TEXT), Course (TEXT), Due Date (DATE), 
                 Priority (TEXT), Completed (BOOLEAN).</p><br>
+
+                <p><strong>Completed Tasks/Assignments: </strong>All completed tasks will automatically be moved to
+                    this table to allow the user to see everything that they completed and for 
+                    the app to use for calculating statistics. It will store each task with most of their prior info, along with the time 
+                    of completion. 
+                    Fields: ID (INT, PRIMARY), Name (TEXT), Description (TEXT), Course (TEXT), Due Date (DATE), Timestamp (DATE).</p><br>
 
 
                 <h2>Functions Performed</h2>
                 <hr>
+                <p>Users will be able to sign up if they do not have an account yet using the 
+                    INSERT function on the login database. When users login the SELECT function will
+                    be used to obtain their login information to see if it matches.</p>
+                
+                <p>For the to-do list and the task list, users will be utilizing INSERT to add new tasks, 
+                    UPDATE to change task information, DELETE to remove tasks they no longer need
+                    , and ORDER BY to sort by priority levels and due dates.</p>
+
+                <p>The completed task list will use the CURRENT_TIMESTAMP function to find when the user 
+                    completed the task, the INSERT INTO function to move items from the task list to the 
+                    completed list, and DELETE to let users remove unwanted tasks (although this may 
+                    affect your statistics).
+                </p>
+                    
+                </p><br>
+                    
 
                 <h2>Role of PHP and JavaScript</h2>
                 <hr>
+                <p></p><br>
 
                 <h2>Roles of Team Members</h2>
-                <p>Lucas: Pomodoro Timer, Productivity Trend Charts / Data Visualization, Notifications for tasks
-                </p>
+                <hr>
+                <p>Aiden: Functionality of the to-do/tasks lists, allowing users to interact with the database, login info</p>
+                <p>Lucas: Pomodoro Timer, Productivity Trend Charts / Data Visualization, Notifications for tasks</p>
+                <p>Raymond: Calendar view for tasks, dark mode and design elements, task completion data</p>
                 <hr>
 
                 <h2>The Increments</h2>
