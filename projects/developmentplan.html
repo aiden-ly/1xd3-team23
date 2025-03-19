@@ -47,7 +47,7 @@
                 <p><strong>Login Info/User Profile: </strong>A list of all login information to allow users 
                 to have their own individual tasks. Their username and password will be used to login, while the 
                 rest of the information inputted will be displayed at their profile. Fields: UserID (INT, PRIMARY), Username (TEXT), 
-                Password (TEXT), Real Name (TEXT), School (TEXT), Major (TEXT), Semester (TEXT)</p><br>
+                Password (TEXT), Real Name (TEXT)</p><br>
     
 
                 <p><strong>To-do List Table: </strong>A simple to-do list to be used daily. It will
@@ -55,17 +55,13 @@
                 to be related to a specific course/assignment) with a checkbox, showing if 
                 it is completed or not. Fields: ID (INT, PRIMARY), Name (TEXT), Description (TEXT), Completed (BOOLEAN).</p><br>
 
-                <p><strong>Tasks/Assignments: </strong>A list of all of the tasks the user adds so that
-                they can easily see an overview of what they need to do and which assignments to 
-                tackle first. It will store each task which will each have their own due date and priority. 
-                Fields: ID (INT, PRIMARY), Name (TEXT), Description (TEXT), Course (TEXT), Due Date (DATE), 
-                Priority (TEXT), Completed (BOOLEAN).</p><br>
-
-                <p><strong>Completed Tasks/Assignments: </strong>All completed tasks will automatically be moved to
-                    this table to allow the user to see everything that they completed and for 
-                    the app to use for calculating statistics. It will store each task with most of their prior info, along with the time 
-                    of completion. 
-                    Fields: ID (INT, PRIMARY), Name (TEXT), Description (TEXT), Course (TEXT), Due Date (DATE), Timestamp (DATE).</p><br>
+                <p><strong>Tasks/Assignments: </strong>A table of all tasks created from every user. With the use 
+                of IDs, the website can display only tasks belonging to the current user. It will store each task 
+                which will each have their own due date and priority. A task is considered "completed" if its Completed 
+                field is true. It will then be moved to out of view and into a separate tab with only completed tasks. When it is completed, it is given the 
+                timestamp of when the user completed it, which will be used for tracking statistics. 
+                Fields: Task_ID (INT, PRIMARY), User_ID (INT, same as the one from login info), Name (TEXT), Description (TEXT), Course (TEXT), Due Date (DATE), 
+                Priority (INT), Completed (BOOLEAN), Timestamp (DATE, NULL by default if not completed).</p><br>
 
 
                 <h2>Functions Performed</h2>
@@ -114,6 +110,14 @@
 
                 <h2>Client Feedback</h2>
                 <hr>
+                <p>
+                    Feedback from Client: "From the looks of it, the school related fields for the user are pretty much unused other than "course" which I don't think needs another parameter elsewhere.
+                    Completed tasks I don't think needs another table. You could just have any completed-only dates as nullable fields in the general tasks table (i.e completed date)."
+                </p>
+                <p>
+                    From this, we decided to scrap some of the unnecessary fields for the user profile/login section, along with changing how
+                    the completed tasks work by keeping it in the same table. We also added a nullable field for date of completion.
+                </p>
             </div>
            
         </div>
