@@ -32,10 +32,10 @@
                 <h2>Purpose</h2>
                 <hr>
                 <p>It is a productivity app that is designed to help university students, 
-                    but can be used by anyone, to help manage their classwork and time. 
-                    We plan to include features such as a to-do list, a built-in Pomodoro timer,
+                    but can be used by anyone, to manage their classwork and time. 
+                    We plan to include features such as a to-do list, a built-in study timer,
                     an assignments list sorted by priority, dark mode, trend charts to track 
-                    your progress, and a calendar view for all tasks.
+                    your progress, and a calendar view for all tasks. It is a bundle of tools all in one.
                 </p><br>
 
                 <h2>Data Description</h2>
@@ -79,6 +79,13 @@
                     completed list, and DELETE to let users remove unwanted tasks (although this may 
                     affect your statistics).
                 </p>
+
+                <p>The timer is simple, allowing the user to start a "study session" timer. For example,
+                    if the user wants to write their essay for 30 minutes, they select 30 minutes in a dropdown input element
+                    and press a button to start, using JavaScript. Unlike the clock on their phone, each session is logged in the database and will
+                    be displayed on the productivity/trend chart, similar to Duoling, however we do not plan on adding
+                    streaks yet due to the complexity.
+                </p>
                     
                 <p>On the client-side, the DARK_MODE function will allow the user to convert the app to a 
                     darker version while still being easily readable. This will be a toggle that is 
@@ -100,7 +107,7 @@
                 <h2>Roles of Team Members</h2>
                 <hr>
                 <p>Aiden: Functionality of the to-do/tasks lists, allowing users to interact with the database, login info</p>
-                <p>Lucas: Pomodoro Timer, Productivity Trend Charts / Data Visualization, Notifications for tasks</p>
+                <p>Lucas: Study Timer, Productivity Trend Charts / Data Visualization, Notifications for tasks</p>
                 <p>Raymond: Calendar view for tasks, dark mode and design elements, task completion data</p>
                 <hr>
 
@@ -112,7 +119,7 @@
                 </p>
                 <p>Lucas: Implement function to notify the user of upcoming tasks using JavaScript and have a rough draft for
                     a productivity line chart (tasks completed on the y-axis, day on the x-axis). When the user logs in, show an example chart with placeholder
-                    data before starting to retrieve the due date via SQL. Also, have a rough draft for how the pomodoro timer will function using JavaScript.
+                    data before starting to retrieve the due date via SQL. Also, have a rough draft for how the timer will function using JavaScript.
                 </p>
                 <p>Raymond: Have a rough draft for the CSS design and how things will look while implementing
                     a dark mode using a combination of CSS & Javascript. Also adding a limited functionality calendar 
