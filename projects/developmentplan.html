@@ -46,14 +46,9 @@
 
                 <p><strong>Login Info/User Profile: </strong>A list of all login information to allow users 
                 to have their own individual tasks. Their username and password will be used to login, while the 
-                rest of the information inputted will be displayed at their profile. Fields: UserID (INT, PRIMARY), Username (TEXT), 
-                Password (TEXT), Real Name (TEXT), Dark Mode (BOOLEAN)</p><br>
-    
-
-                <p><strong>To-do List Table: </strong>A simple to-do list to be used daily. It will
-                store each task that the user adds (this can be anything and doesn't have 
-                to be related to a specific course/assignment) with a checkbox, showing if 
-                it is completed or not. Fields: ID (INT, PRIMARY), Name (TEXT), Description (TEXT), Completed (BOOLEAN).</p><br>
+                rest of the information inputted will be displayed at their profile. They will also have their time 
+                that they used the timer with tracked. Fields: UserID (INT, PRIMARY), Username (TEXT), 
+                Password (TEXT), Real Name (TEXT), <strong>Minutes Total (INT) [REVISED]</strong></p><br>
 
                 <p><strong>Tasks/Assignments: </strong>A table of all tasks created from every user. With the use 
                 of IDs, the website can display only tasks belonging to the current user. It will store each task 
@@ -61,8 +56,7 @@
                 field is true. It will then be moved to out of view and into a separate tab with only completed tasks. When it is completed, it is given the 
                 timestamp of when the user completed it, which will be used for tracking statistics. 
                 Fields: Task_ID (INT, PRIMARY), User_ID (INT, same as the one from login info), Name (TEXT), Description (TEXT), Course (TEXT), Due Date (DATE), 
-                Priority (INT), Completed (BOOLEAN), Timestamp (DATE, NULL by default if not completed).</p><br>
-
+                Priority (INT), Completed (BOOLEAN), <strong>Completed Date (DATE, NULL by default if not completed) [REVISED]</strong>.</p><br>
 
                 <h2>Functions Performed</h2>
                 <hr>
@@ -89,7 +83,8 @@
                     
                 <p>On the client-side, the DARK_MODE function will allow the user to convert the app to a 
                     darker version while still being easily readable. This will be a toggle that is 
-                    remembered using local storage for the future visits, maintaining their previous setting.</p>
+                    remembered using SQL for the future visits, maintaining their previous setting.
+                </p>
 
                 </p><br>
                     
@@ -98,16 +93,18 @@
                 <hr>
                 <p>PHP will be used to retrieve the stored user data such as courses and tasks. The user login is handled by JavaScript
                     which queries PHP to read their account or create an account if they're new. Once they're using the app, JavaScript
-                    provides the calendar view, PHP retrieves the tasks with the selected due date, and JS displays it back to the user. 
-                    JS provides the charts and PHP provides the raw stats, JS provides the notifications and PHP remembers whether the user
-                    has already been notified or not. JS will also provide the functionality to be able to switch between viewing both light/dark modes.
+                    provides the calendar view and PHP retrieves the task due dates, JS provides the charts and PHP provides the raw stats, JS
+                    provides the notifications and PHP remembers whether the user has already been notified or not. JS will also provide the 
+                    functionality to be able to switch between viewing both light/dark modes.
+
                 </p>
 
                 <h2>Roles of Team Members</h2>
                 <hr>
-                <p>Aiden: Functionality of the to-do/tasks lists, allowing users to interact with the database, login info</p>
+                <p>Aiden: Functionality of the tasks lists (adding/editing/deleting/completing), allowing users to interact with the database, 
+                    setting up login system</p>
                 <p>Lucas: Study Timer, Productivity Trend Charts / Data Visualization, Notifications for tasks</p>
-                <p>Raymond: Calendar view for tasks, dark mode and design elements, task completion data, home page</p>
+                <p>Raymond: Calendar view for tasks, dark mode and design elements, task completion data</p>
                 <hr>
 
                 <h2>The Increments</h2>
@@ -127,7 +124,7 @@
                 </p>
                 <hr>
 
-                <h2>Client Feedback</h2>
+                <h2>Client Feedback (First Increment)</h2>
                 <hr>
                 <p>
                     Feedback from Client: "From the looks of it, the school related fields for the user are pretty much unused other than "course" which I don't think needs another parameter elsewhere.
@@ -137,6 +134,41 @@
                     From this, we decided to scrap some of the unnecessary fields for the user profile/login section, along with changing how
                     the completed tasks work by keeping it in the same table. We also added a nullable field for date of completion.
                 </p>
+                <hr>
+
+                <h2>Client Feedback (Before Submission, April 24th)</h2>
+                <hr>
+                <p>
+                    Feedback from Client: "Hey did some testing. First of all good job. It looks good. Some things I like:
+                    <ul>
+                        <li>Its nice and responsive</li>
+                     <li>Feature-wise it seems complete</li>
+                     <li>The graph is cool</li>
+                     <li>Adapts pretty easily to different screen sizes</li>
+                    </ul>
+                    
+                    
+                    
+                    Some things I think you should look at though:
+                    <ul>
+                        <li>The graph y-axis goes down to negative 1 by default. If it's just # of tasks completed then that should be impossible</li>
+                        <li>Also the axis step is .2, I think it should just be whole numbers if possible</li>
+                        <li>The calendar by default is empty until I change the month, there's a picture below to show you what I mean</li>
+                        <li>All the data on the graph and the timer resets when I refresh the page. They should be persistent. The timer idk how to do that but it shouldn't be too hard. The graph, you probably need to fetch the data from the backend and assign it to the chart.</li>
+                        <li>User can make the due date for a task in the past. It'll just say the task is overdue so I'm not sure if that's intentional"</li>
+                    </ul>
+                   
+                </p>
+                <p>
+                    From this, we have fixed all of the bugs with graph, so the y-axis is now fitting, the calendar, which now 
+                    properly displays upon loading, and the data, which should now persist on refresh. However, being able to 
+                    create a task with a due date in the past is intentional, as you may want to have a constant reminder that
+                    you still have previously overdue work to catch up on. With this, we should essentially be ready to submit.
+                </p>
+
+
+
+
             </div>
            
         </div>
