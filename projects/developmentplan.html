@@ -160,10 +160,14 @@
                    
                 </p>
                 <p>
-                    From this, we have fixed all of the bugs with graph, so the y-axis is now fitting, the calendar, which now 
-                    properly displays upon loading, and the data, which should now persist on refresh. However, being able to 
+                    From this, we have fixed all of the bugs with graph, so the y-axis is now fitting and it is persistent, the calendar, which now 
+                    properly displays upon loading, and the data, which now persists on refresh or even quitting the page since it fetches from the database. However, being able to 
                     create a task with a due date in the past is intentional, as you may want to have a constant reminder that
-                    you still have previously overdue work to catch up on. With this, we should essentially be ready to submit.
+                    you still have previously overdue work to catch up on. With this, we should essentially be ready to submit. Additionally, the timer is now feature-rich; it prompts the user to confirm
+                    whether they want to quit or not when they're in the middle of a study session, when time is up it returns to the time initially set, it communicates with the database via AJAX 
+                    to log the total amount of time studied, the time can be adjusted when it's already been started, and as a bonus plays a ringtone when the timer is over. Asking the user if they want to quit was easier than implementing
+                    persistence, gave clear feedback to the user, and is a common feature implemented by many popular sites. As well, we scrapped the idea of notifications due to developmental challenges (it only supports HTTPS), support is limited 
+                    on mobile devices, the timer already provides feedback when its done, and because Studyflow is a website and not a downloadable desktop app.
                 </p>
 
 
